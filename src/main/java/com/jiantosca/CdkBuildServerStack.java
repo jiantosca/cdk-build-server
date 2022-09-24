@@ -1,4 +1,4 @@
-package com.myorg;
+package com.jiantosca;
 
 import software.constructs.Construct;
 import software.amazon.awscdk.Stack;
