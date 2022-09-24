@@ -18,7 +18,7 @@ pipeline {
         
         stage('spotless') {
             steps {
-                sh '/mvnw spotless:check'
+                sh './mvnw spotless:check'
             }
         }
         
