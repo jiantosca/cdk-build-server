@@ -13,7 +13,18 @@ public class CdkBuildServerStack extends Stack {
 
 	public CdkBuildServerStack(final Construct scope, final String id, final StackProps props) {
 		super(scope, id, props);
+		
+		/**
+		 * EC2
+		 * 	- my api
+		 * 	- t3.large instance type
+		 *  - JonsAWSKeyPair
+		 *  - create security group
+		 *  - allow ssh traffic from anywhere
+		 *  - 15 gb storage
+		 */
 
+		
 		// The code that defines your stack goes here
 
 		// example resource
