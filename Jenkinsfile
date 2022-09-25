@@ -21,7 +21,11 @@ pipeline {
                 sh './mvnw spotless:check'
             }
         }
-        
+        stage('sonar') {
+            steps {
+                sh './mvnw sonar:sonar'
+            }
+        }        
         stage('test') {
             steps {
                 sh './mvnw test'
