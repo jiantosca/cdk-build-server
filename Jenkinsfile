@@ -10,6 +10,9 @@ pipeline {
 
     stages {
         
+        stage('env') {
+            sh 'printenv'
+        }
         stage('clean') {
             steps {
                 sh './mvnw clean'
@@ -23,7 +26,7 @@ pipeline {
         }
         stage('sonar') {
             steps {
-                sh './mvnw sonar:sonar'
+                //sh './mvnw sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=the-generated-token'
             }
         }        
         stage('test') {
