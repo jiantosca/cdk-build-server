@@ -32,15 +32,18 @@ pipeline {
                 sh './mvnw test'
             }
         }        
-        stage('sonar') {
-            steps {
-                sh './mvnw sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=squ_c65a85af333e857b6c1db5922c24f7897cbde7c1'
-            }
-        }        
         stage('package') {
             steps {
                 sh './mvnw package'
             }
         }
+        stage('sonar') {
+            steps {
+                // this guy fully qulifies plugin so we don't have to put in project https://www.youtube.com/watch?v=KsTMy0920go
+                withSonarQubeEnv(installationName: 'sq1') {
+                    sh './mvnw sonar:sonar'
+                }
+            }
+        }        
     }
 }
