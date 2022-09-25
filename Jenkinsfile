@@ -27,17 +27,16 @@ pipeline {
                 sh './mvnw spotless:check'
             }
         }
+        stage('test') {
+            steps {
+                sh './mvnw test'
+            }
+        }        
         stage('sonar') {
             steps {
                 sh './mvnw sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=squ_c65a85af333e857b6c1db5922c24f7897cbde7c1'
             }
         }        
-        stage('test') {
-            steps {
-                sh './mvnw test'
-            }
-        }
-        
         stage('package') {
             steps {
                 sh './mvnw package'
