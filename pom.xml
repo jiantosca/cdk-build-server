@@ -2,7 +2,7 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.myorg</groupId>
+    <groupId>com.jiantosca</groupId>
     <artifactId>cdk-build-server</artifactId>
     <version>0.1</version>
 
@@ -49,7 +49,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <mainClass>com.myorg.CdkBuildServerApp</mainClass>
+                    <mainClass>com.jiantosca.CdkBuildServerApp</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -95,6 +95,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
             </plugin>
         </plugins>
     </build>
