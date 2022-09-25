@@ -29,8 +29,7 @@ pipeline {
         }
         stage('sonar') {
             steps {
-                sh 'echo "something here"'
-                //sh './mvnw sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=the-generated-token'
+                sh './mvnw sonar:sonar -Dsonar.host.url=http://localhost:9000'// -Dsonar.login=the-generated-token'
             }
         }        
         stage('test') {
