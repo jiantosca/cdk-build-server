@@ -11,8 +11,11 @@ pipeline {
     stages {
         
         stage('env') {
-            sh 'printenv'
+            steps {
+                sh 'printenv'                
+            }
         }
+        
         stage('clean') {
             steps {
                 sh './mvnw clean'
