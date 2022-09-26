@@ -16,6 +16,7 @@ public class CdkBuildServerStack extends Stack {
 		/**
 		 * EC2 - my api - t3.large instance type - JonsAWSKeyPair - create security
 		 * group - allow ssh traffic from anywhere - 15 gb storage
+		 * 
 		 */
 
 		// The code that defines your stack goes here
